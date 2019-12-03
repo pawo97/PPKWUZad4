@@ -13,6 +13,12 @@ table, td {
 
 <table class="table table-bordered table-striped">	
 		<tbody>
+			<tr>
+			<td>Imie i nazwisko</td>
+			<td>Tytul</td>
+			<td>Numer telefonu</td>
+			<td>Wygeneruj</td>
+			</tr>
 			<tr th:each="tempEmployee : ${employees}">
 				<td th:text="${tempEmployee.firstName}" />	
 				<td th:text="${tempEmployee.lastName}" />	
