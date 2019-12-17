@@ -1,0 +1,65 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "2.0.0",
+    "title": "Employee vCard Generator",
+    "description": "This is a sample server Employee server. You can generate vCard from website, save on your phone and import to contacts",
+    "termsOfService": "",
+    "contact": {
+      "name": "Paweł Wolski",
+      "email": "209509@edu.p.lodz.pl",
+      "url": "https://github.com/pawo97/PPKWUZad4"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://floating-plateau-16100.herokuapp.com"
+    }
+  ],
+  "paths": {
+    "/employee/{name}": {
+      "get": {
+        "description": "Return a list of found employees based on a name, if this name are not in database, return empty table of employees",
+        "operationId": "find all employees by name",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "name of  to fetch",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "pet response",
+            "content": {
+              "html/text": {
+                "schema": {
+                  "$ref": ""
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": ""
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
