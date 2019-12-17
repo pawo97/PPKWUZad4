@@ -22,14 +22,14 @@ paths:
       parameters:
         - name: name
           in: path
-          description: name of  to fetch
+          description: name of employee to fetch
           required: true
           schema:
             type: string
             format: string
       responses:
         '200':
-          description: pet response
+          description: employee response
           content:
             html/text:
               schema:
